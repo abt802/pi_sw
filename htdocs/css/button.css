@@ -1,0 +1,46 @@
+button {
+  min-width: 80px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676d7;
+  background: #337ab7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d49aa;
+  background: #286090;
+}
+
+/*
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+*/
+
+span.grip {
+  width: 12px;
+  height: 24px;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 5px;
+  padding: 4px 10px 4px 2px;
+  cursor: move;
+  vertical-align: middle;
+  margin-top: -.7em;
+  margin-right: .3em;
+  font-size: 12px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  color: #cccccc;
+  text-shadow: 1px 0 1px black;
+}
+span.grip:after {
+  content: '.. .. .. ..';
+}

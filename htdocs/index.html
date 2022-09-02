@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>Remote Switch</title>
+
+<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/Sortable.min.js"></script>
+<script src="js/jquery-sortable.js"></script>
+<script src="js/base.js"></script>
+<script src="js/action.js"></script>
+<script src="js/host_action.js"></script>
+<script src="js/index.js"></script>
+<script src="js/wol.js"></script>
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/button.css">
+</head>
+
+<body onLoad="initDisp()">
+<div id="login_area">
+ <h2>Login</h2>
+ <ul>
+  <li>ID:<input id="login_id" type="text"></li>
+  <li>Pass:<input id="login_pass" type="password"></li>
+ </ul>
+ <button id="login_btn" type="button">Login</button>
+</div>
+
+<div id="main_area">
+ <div id="menu_open"><span class="menu_icon"></span></div>
+ <div id="menu_area">
+  <ul>
+   <li><button id="edit_btn">Setting KS0212</button></li>
+   <li><button id="host_edit_btn">Setting Host</li>
+   <li><button id="wol_list_btn">WOL List</li>
+   <li><button id="logout_btn" type="button">Logout</button></li>
+  </ul>
+ </div>
+
+ <div id="status_area" class="status_view">
+  <h2>Remote Switch</h2>
+  <button id="update_btn">Reload</button>
+  <span>KS0212 Status <span id="updatetime"></span></span>
+  <ul id="sw_status">
+   <li id="r1">No.1:<span>●</span></li>
+   <li id="r2">No.2:<span>●</span></li>
+   <li id="r3">No.3:<span>●</span></li>
+   <li id="r4">No.4:<span>●</span></li>
+  </ul>
+ </div>
+
+ <div id="edit_button_area">
+  <h2>Setting KS0212</h2>
+  <button id="add_btn">Add Button</button>
+  <button id="edit_close_btn">Close</button>
+  <br>
+  <ul class="button_box"></ul>
+ </div>
+ 
+ <div id="edit_area">
+  <h2>Edit</h2>
+  <ul id="relay_box">
+   <li>No.1<input type="checkbox" class="relay" value="1"></li>
+   <li>No.2<input type="checkbox" class="relay" value="2"></li>
+   <li>No.3<input type="checkbox" class="relay" value="3"></li>
+   <li>No.4<input type="checkbox" class="relay" value="4"></li>
+  </ul>
+  <ul id="action_box">
+   <li>
+    <input type="radio" class="action_radio" name="action_radio" value="on">ON
+   </li>
+   <li>
+    <input type="radio" class="action_radio" name="action_radio" value="off">OFF
+   </li>
+   <li>
+    <input type="radio" class="action_radio" name="action_radio" value="pulse">PULSE
+    <input type="text" id="duration">
+   </li>
+  </ul>
+  <ul>
+   <li>name<input type="text" id="action_name"></li>
+  </ul>
+  <input type="hidden" id="bid">
+  <button id="save_btn">Save</button>
+  <button id="del_btn">Delete</button>
+  <button id="close_btn">Close</button>
+ </div>
+
+ <div id="host_area" class="status_view">
+  <div id="host_view"></div>
+ </div>
+
+ <div id="host_list">
+  <h2>Setting Host</h2>
+  <div id="host_menu">
+   <button id="host_add_btn">Add Host</button>
+   <button id="host_reorder_btn">Reorder</button>
+   <button id="host_list_close_btn">Close</button>
+  </div>
+  <div id="reorder_menu">
+   <button id="reorder_save_btn">Save</button>
+   <button id="reorder_cancel_btn">Cancel</button>
+  </div>
+  <ul></ul>
+ </div>
+
+ <div id="host_edit">
+  <h2>Edit</h2>
+  <ul>
+   <li>Label<input type="text" id="host_name"></li>
+   <li>IP/Host<input type="text" id="host_ip"></li>
+   <li>MAC<input type="text" id="host_mac"></li>
+  </ul>
+  <ul id="action_list"></ul>
+  <input type="hidden" id="hid">
+  <button id="host_save_btn">Save</button>
+  <button id="host_del_btn">Delete</button>
+  <button id="host_close_btn">Close</button>
+ </div>
+
+ <div id="wol_view">
+  <h2>WOL List</h2>
+  <button id="wol_reload_btn">Reload</button>
+  <button id="wol_close_btn">Close</button>
+  <ul id="wol_list"></ul>
+ </div>
+</div>
+<div id="info_area">info</div>

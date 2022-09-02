@@ -1,0 +1,120 @@
+body {
+ position: relative;
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 0 0.5em 0.5em;
+}
+ul {
+ list-style: none;
+ padding-left: 0.5rem;
+}
+li {
+ margin-bottom: 0.5rem;
+}
+li button {
+ margin-right: 0.5rem;
+}
+#login_area, #main_area, #menu_area, #edit_button_area, #edit_area, #del_btn, #host_list, #host_edit, #reorder_menu, #wol_view {
+ display: none;
+}
+#menu_open {
+ position: absolute;
+ top: 0;
+ right: 1rem;
+ width: 24px;
+ height: 24px;
+ cursor: pointer;
+}
+#menu_area {
+ position: absolute;
+ top: 0;
+ right: 1rem;
+ background: white;
+ z-index: 1;
+}
+#status_area {
+ border-bottom: 1px solid #aaa;
+}
+#sw_status li{
+ display: inline-block;
+ margin-right: 0.5rem;
+}
+#host_area {
+ border-top: 1px solid #aaa;
+}
+#host_view fieldset {
+ position: relative;
+}
+#host_view .act_open {
+ position: absolute;
+ top: 0;
+ right: 1rem;
+ width: 24px;
+ height: 24px;
+ cursor: pointer;
+ text-align: center;
+}
+#host_view .act_box {
+ display: none;
+}
+.led_red {
+ color: red;
+}
+.led_green {
+ color: lightgreen;
+}
+.led_yellow {
+ color: yellow;
+}
+.wol_btn{
+ color: orange;
+ font-weight: bold;
+}
+.act_btn {
+ background: orange;
+ position: relative;
+}
+span.ping {
+ font-weight: bold;
+}
+.power_icon {
+ width: 1.5em;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+}
+
+.menu_icon, .menu_icon:before, .menu_icon:after {
+ position: absolute;
+ height: 2px;
+ width: 100%;
+ background: #000;
+ content: '';
+}
+.menu_icon:before {
+ top: 8px;
+}
+.menu_icon:after {
+ top: 16px;
+}
+#info_area {
+ position: fixed;
+ top: 0;
+ left: 50%;
+ transform: translate(-50%, -5rem);
+ transition: all 0.3s;
+ color: red;
+ background: white;
+}
+#info_area.open_info {
+ transform: translate(-50%, 0);
+}
+
+#wol_list li button {
+ margin-left: 10px;
+}
+#wol_list li span {
+ display: inline-block;
+ width: 10em;
+}
